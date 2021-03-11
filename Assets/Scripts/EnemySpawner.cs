@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Delay Spawns")]
-    [SerializeField] float delayMin = 1f;
-    [SerializeField] float delayMax = 5f;
+    //[Header("Delay Spawns")]
+    /*[SerializeField]*/ float delayMin = 2f;
+    /*[SerializeField]*/ float delayMax = 10f;
 
     [Header("Enemies")]
-    [SerializeField] GameObject enemy;
+    [SerializeField] Attacker enemy;
 
     bool isSpawning = true;
 
@@ -26,7 +26,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        Attacker attacker = Instantiate(enemy, transform.position, Quaternion.identity) as Attacker;
+        attacker.transform.parent = transform;
     }
 
     // Start is called before the first frame update

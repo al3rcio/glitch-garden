@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     [Range(0f, 5f)]
-    float currentSpeed = 2f;
+    float currentSpeed = 7f;
     
     
     void Update()
