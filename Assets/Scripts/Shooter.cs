@@ -20,12 +20,10 @@ public class Shooter : MonoBehaviour
     {
         if (IsAttackerInLane())
         {
-            Debug.Log("shoot pew pew");
             animator.SetBool("isAttacking", true);
         }
         else
         {
-            Debug.Log("sit and wait!");
             animator.SetBool("isAttacking", false);
         }
     }

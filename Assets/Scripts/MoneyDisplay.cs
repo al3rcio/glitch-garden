@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class MoneyDisplay : MonoBehaviour
 {
-    public int money = 100;
+    int money = 1000;
     Text moneyText;
-    Defender moneyCost;
+ 
 
     private void Start()
     {
         moneyText = GetComponent<Text>();
-        moneyCost = FindObjectOfType<Defender>();
         UpdateDisplay();
     }
 

@@ -5,16 +5,13 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     //[Header("Delay Spawns")]
-    /*[SerializeField]*/ float delayMin = 2f;
+    /*[SerializeField]*/ float delayMin = 4f;
     /*[SerializeField]*/ float delayMax = 10f;
 
     [Header("Enemies")]
     [SerializeField] Attacker enemy;
 
     bool isSpawning = true;
-
-
-
     IEnumerator StartSpawning()
     {
         while (isSpawning)
