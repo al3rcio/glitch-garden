@@ -44,7 +44,7 @@ public class Attacker : MonoBehaviour
         if (health)
         {
             health.DealDamage(damage);
-            if (health.Die())
+            if (health.GetDie())
             {
                 animator.SetBool("isAttacking", false);
             }

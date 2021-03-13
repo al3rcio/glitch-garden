@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 540171476}
   m_Layer: 0
   m_Name: Evil Robot
-  m_TagString: Untagged
+  m_TagString: EvilRobot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 7195178767152993386, guid: 003ccee9102f50c4ebdc500c281c195f, type: 3}
-  health: 1000
+  health: 100
 --- !u!95 &6589854454551663630
 Animator:
   serializedVersion: 3

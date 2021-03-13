@@ -5,23 +5,27 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] GameObject deathVFX;
-    [SerializeField] float health = 100f;
+    [SerializeField] float health;
+    bool hasDie = false;
  
     public void DealDamage(float damage)
     {
-        health = health - damage;
+        health -= damage;
         if (health <= 0)
         {
             Die();
         }
     }
 
-    public bool Die()
+    public void Die()
     {
         DeathVFX();
         Destroy(gameObject);
-        return true;
+        hasDie = true;
     }
+
+    public bool GetDie() { return hasDie; }
+
 
     public void DeathVFX()
     {

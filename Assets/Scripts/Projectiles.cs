@@ -8,7 +8,7 @@ public class Projectiles : MonoBehaviour
     float speedShoot = 5f;
     float speedRotate = 200f;
     float waitRotate = 0.1f;
-    float damage = 50f;
+    [SerializeField] float damage;
 
     public void Update()
     {

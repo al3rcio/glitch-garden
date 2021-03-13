@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVFX: {fileID: 3977715312263420279, guid: 4b39bffb32d3174408fd7dd4ab76b949, type: 3}
+  damage: 50
 --- !u!50 &6984001089780603817
 Rigidbody2D:
   serializedVersion: 4

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVFX: {fileID: 3977715312263420279, guid: 69757d0702d42e94a9961a58b1c081fe, type: 3}
+  damage: 50
 --- !u!50 &343793559
 Rigidbody2D:
   serializedVersion: 4
@@ -136,7 +137,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.37333333, y: 0.37333333}
+    oldSize: {x: 0.32941177, y: 0.32941177}
     newSize: {x: 0.56, y: 0.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -7,7 +7,26 @@ public class LevelLoader : MonoBehaviour
 {
     float loadTime = 3f;
     int currentScene;
+    LifeDisplay life;
 
+    
+    void Start()
+    {
+        life = FindObjectOfType<LifeDisplay>();
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        if (currentScene == 0)
+        {
+            StartCoroutine(LoadingStart());
+        }
+        
+    }
+    void Update()
+    {
+        if (life.GetLife() <= 0)
+        {
+            StartCoroutine(LoadingRestart());
+        }
+    }
     public void LoadNextScene()
     {
         SceneManager.LoadScene(currentScene + 1);
@@ -19,20 +38,14 @@ public class LevelLoader : MonoBehaviour
         LoadNextScene();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    IEnumerator LoadingRestart()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        if (currentScene == 0)
-        {
-            StartCoroutine(LoadingStart());
-        }
-        
+        yield return new WaitForSeconds(loadTime);
+        LoadRestart();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadRestart()
     {
-        
+        SceneManager.LoadScene("StartScreen");
     }
 }

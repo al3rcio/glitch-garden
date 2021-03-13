@@ -5,37 +5,36 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     //[Header("Delay Spawns")]
-    /*[SerializeField]*/ float delayMin = 4f;
-    /*[SerializeField]*/ float delayMax = 10f;
+    /*[SerializeField]*/ float delayMin = 1f;
+    /*[SerializeField]*/ float delayMax = 4f;
 
     [Header("Enemies")]
-    [SerializeField] Attacker enemy;
+    [SerializeField] Attacker[] enemies;
 
     bool isSpawning = true;
+    void Start()
+    {
+        StartCoroutine(StartSpawning());
+    }
     IEnumerator StartSpawning()
     {
         while (isSpawning)
         {
             yield return new WaitForSeconds(Random.Range(delayMin, delayMax));
-            SpawnEnemies();
+            // SpawnEnemies();
+            Spawn();
         }
     }
 
-    private void SpawnEnemies()
+    /* private void SpawnEnemies()
+     {
+         Spawn();
+     }
+ */
+    private void Spawn()
     {
-        Attacker attacker = Instantiate(enemy, transform.position, Quaternion.identity) as Attacker;
+        int randomSpawn = Random.Range(0, enemies.Length);
+        Attacker attacker = Instantiate(enemies[randomSpawn], transform.position, Quaternion.identity) as Attacker;
         attacker.transform.parent = transform;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(StartSpawning());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
