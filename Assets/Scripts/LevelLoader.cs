@@ -9,8 +9,7 @@ public class LevelLoader : MonoBehaviour
     int currentScene;
     LifeDisplay life;
 
-    
-    void Start()
+    public void Start()
     {
         life = FindObjectOfType<LifeDisplay>();
         currentScene = SceneManager.GetActiveScene().buildIndex;
@@ -20,13 +19,13 @@ public class LevelLoader : MonoBehaviour
         }
         
     }
-    void Update()
+
+    public void RestartScene()
     {
-        if (life.GetLife() <= 0)
-        {
-            StartCoroutine(LoadingRestart());
-        }
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentScene);
     }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(currentScene + 1);
@@ -41,11 +40,22 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadingRestart()
     {
         yield return new WaitForSeconds(loadTime);
-        LoadRestart();
+        LoadStartScreen();
     }
 
-    public void LoadRestart()
+    public void LoadStartScreen()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("StartScreen");
+    }
+
+    public void LoadOptionsScreen()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

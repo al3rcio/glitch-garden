@@ -6,6 +6,7 @@ public class DefenderSpawner : MonoBehaviour
 {
     Defender defender;
     MoneyDisplay moneyDisplay;
+    [SerializeField] GameObject placeHighlight;
 
     private void Start()
     {
@@ -27,6 +28,8 @@ public class DefenderSpawner : MonoBehaviour
         {
             SpawnDefender(SnapToGrid(GetSquaredPos()));
             moneyDisplay.SpendMoney(cost);
+            placeHighlight.SetActive(false);
+            
         }
     }
 

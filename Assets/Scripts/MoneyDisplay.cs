@@ -17,7 +17,7 @@ public class MoneyDisplay : MonoBehaviour
 
     private void UpdateDisplay()
     {
-        moneyText.text = money.ToString();
+        moneyText.text = "$ " + money.ToString();
     }
 
     public bool HasMoney(int amount)

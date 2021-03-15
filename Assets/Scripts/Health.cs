@@ -7,7 +7,14 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     [SerializeField] float health;
     bool hasDie = false;
- 
+    LevelController levelController;
+
+    private void Start()
+    {
+        levelController = FindObjectOfType<LevelController>();
+    }
+
+
     public void DealDamage(float damage)
     {
         health -= damage;
@@ -22,6 +29,10 @@ public class Health : MonoBehaviour
         DeathVFX();
         Destroy(gameObject);
         hasDie = true;
+        if (gameObject.GetComponent<Attacker>())
+        {
+            levelController.AttackerKilled();
+        }
     }
 
     public bool GetDie() { return hasDie; }

@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LifeDisplay : MonoBehaviour
 {
-    int life = 10;
-   // int breakCount = 0;
+    /*[SerializeField]*/ int life = 2;
+    int dangerLife;
     Text textLife;
+    LevelController levelController;
+    
 
     private void Start()
     {
         textLife = GetComponent<Text>();
+        levelController = FindObjectOfType<LevelController>();
+        dangerLife = life / 2;
     }
     private void Update()
     {
@@ -22,11 +26,14 @@ public class LifeDisplay : MonoBehaviour
     private void DisplayLife()
     {
         textLife.text = life.ToString();
+        if (life <= dangerLife)
+        {
+            textLife.color = Color.red;                   
+        }
         if (life <= 0)
         {
-            textLife.text = "YOU LOSE";
-            textLife.color = Color.red;
-            //textLife.transform.position = new Vector3(31, -68, 0);
+            life = 0;
+            levelController.HandleLose();
         }
     }
 
