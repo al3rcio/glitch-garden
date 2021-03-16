@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LifeDisplay : MonoBehaviour
 {
-    /*[SerializeField]*/ int life = 2;
-    int dangerLife;
+    public float baseLife = 3f;
+    float life;
+    public float damage = 1f;
+    float dangerLife;
     Text textLife;
     LevelController levelController;
     
 
     private void Start()
     {
+        life = baseLife - PlayerPrefsController.GetDifficulty();
         textLife = GetComponent<Text>();
         levelController = FindObjectOfType<LevelController>();
         dangerLife = life / 2;
@@ -37,12 +40,11 @@ public class LifeDisplay : MonoBehaviour
         }
     }
 
-    public int BreakCount()
+    public float BreakCount()
     {
-        //breakCount++;
-        life -= 1;
+        life -= damage;
         return life;
     }
 
-    public int GetLife() { return life; }
+    public float GetLife() { return life; }
 }

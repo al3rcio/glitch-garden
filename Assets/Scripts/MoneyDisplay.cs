@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class MoneyDisplay : MonoBehaviour
 {
-    int money = 1000;
+    public float moneyBase = 1000f;
+    float money;
     Text moneyText;
  
 
     private void Start()
     {
+        money = Mathf.Round(moneyBase / (PlayerPrefsController.GetDifficulty() + 1));
         moneyText = GetComponent<Text>();
         UpdateDisplay();
     }
@@ -20,18 +22,18 @@ public class MoneyDisplay : MonoBehaviour
         moneyText.text = "$ " + money.ToString();
     }
 
-    public bool HasMoney(int amount)
+    public bool HasMoney(float amount)
     {
         return money >= amount;
     }
 
-    public void AddMoney(int amount)
+    public void AddMoney(float amount)
     {
         money += amount;
         UpdateDisplay();
     }
 
-    public void SpendMoney(int amount)
+    public void SpendMoney(float amount)
     {
         if (money >= amount)
         {

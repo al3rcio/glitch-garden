@@ -480,9 +480,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 684632483}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.493
+  m_MaxValue: 2
+  m_WholeNumbers: 1
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 804046388}
   - component: {fileID: 804046387}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas-Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,71 +1275,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407120958}
   m_CullTransparentMesh: 1
---- !u!1001 &1409897072
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 261.05203
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 151.82295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -42.916557
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932593, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932594, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_Volume
-      value: 0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064351712844932594, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 6daf505231135794d83979b1518ff2ed, type: 3}
-    - target: {fileID: 5064351712844932596, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
-      propertyPath: m_Name
-      value: MusicPlayer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 785edd0a53f52a949a49a401684c072b, type: 3}
 --- !u!1 &1415067933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 2113298113}
+  difficultySlider: {fileID: 769960379}
 --- !u!4 &1415067935
 Transform:
   m_ObjectHideFlags: 0
@@ -1382,7 +1318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1470204667
 GameObject:

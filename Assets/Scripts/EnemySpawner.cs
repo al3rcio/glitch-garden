@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    float delayMin = 4f;
-    float delayMax = 4f;
+    float delayMin = 10f;
+    float delayMax = 10f;
 
     [Header("Enemies")]
     [SerializeField] Attacker[] enemies;
